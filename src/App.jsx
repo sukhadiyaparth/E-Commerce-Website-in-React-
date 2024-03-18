@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
+import './App.css'
+import Nav from './components/NavItems'
+import {Outlet} from 'react-router-dom'
 function App() {
  
   return (
     <>
-   <h1>hello , parth</h1>
+     <Nav/>
+   <Outlet/>
+
     </>
   )
 }
