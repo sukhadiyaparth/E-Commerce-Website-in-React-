@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import 'swiper/css';
 import Home from './home/Home.jsx'
+
 // bootstrap css
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import Shop  from './shop/Shop.jsx';
+import Blog  from './blog/Blog.jsx';
 
 
 // fonts and icons
@@ -22,12 +25,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
+
 const router = createBrowserRouter([
   {
     path: "/",
     element:<App/>,
     children:[
-      {path:"/",element:<Home/>}
+      {path:"/",element:<Home/>},
+      {path:"/shop",element:<Shop/>},
+      {path:"/blog",element:<Blog/>}
+
+
     ]
   },
 ]);

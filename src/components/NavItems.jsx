@@ -36,10 +36,10 @@ function NavItems() {
                   <div className="menu">  
                     <ul className={`lab-ul ${menuToggal?"active":""}`}>
                       <li><Link to='/'>Home</Link></li>
-                      <li><Link to='/Shope'>Shope</Link></li>
-                      <li><Link to='/Blog'>Blog</Link></li>
-                      <li><Link to='/About'>About</Link></li>
-                      <li><Link to='/Contact'>Contact</Link></li>
+                      <li><Link to='/shop'>Shop</Link></li>
+                      <li><Link to='/blog'>Blog</Link></li>
+                      <li><Link to='/about'>About</Link></li>
+                      <li><Link to='/contact'>Contact</Link></li>
                     </ul>
                   </div>
                   <Link to='/singin ' className='lab-btn me-3 d-none d-md-block'>Sing in</Link>
