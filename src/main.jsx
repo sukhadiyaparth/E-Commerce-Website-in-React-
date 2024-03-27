@@ -4,6 +4,7 @@ import App from './App.jsx'
 import 'swiper/css';
 import Home from './home/Home.jsx'
 
+
 // bootstrap css
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -25,6 +26,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
+import Singlepage from './shop/Singlepage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +35,8 @@ const router = createBrowserRouter([
     children:[
       {path:"/",element:<Home/>},
       {path:"/shop",element:<Shop/>},
-      {path:"/blog",element:<Blog/>}
+      
+      {path:"/shop/:id",element:<Singlepage/>},
 
 
     ]

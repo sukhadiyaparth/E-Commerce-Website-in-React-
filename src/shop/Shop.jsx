@@ -3,6 +3,7 @@ import Pageheader from '../components/Pageheader'
 import Data from '../products.json'
 import Productcard from './Productcard'
 import Pagination from './Pagination'
+import Search from './Search'
 
 function Shop() {
   const [gridlist,setgridlist] = useState(true)
@@ -38,13 +39,13 @@ setcurrentpage(pagenum)
                 <i className="icofont-listine-dots"></i>
               </a>
             </div>
-            <Productcard products={products} gridlist={gridlist}/>
+            <Productcard products={currentproducts} gridlist={gridlist}/>
             </div>
             <Pagination ProductsperPage={ProductsperPage} total= {products.length} activepage ={currentpage} paginate={paginate}/>
           </article>
         </div>
         <div className="col-lg-4 col-12" >
-          right
+          <Search products={products} gridlist={gridlist}/>
         </div>
       </div>
     </div>
