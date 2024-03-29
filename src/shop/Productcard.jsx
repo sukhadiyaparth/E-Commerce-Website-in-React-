@@ -44,7 +44,7 @@ function Productcard({products,gridlist}) {
         <div className="product-list-item">
             <div className="product-thumb">
              <div className="pro-thumb">
-                <img src={data.img} alt="" />
+                <img src={data?.img} alt="" />
              </div>
             
 
