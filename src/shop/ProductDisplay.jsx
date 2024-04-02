@@ -29,12 +29,26 @@ const product = {
     img : img,
     name : name,
     price: price,
-    quantity : quantity,
+    q1 : prequantity,
     size : size,
     color : color,
     coupon : coupon
 
 }
+console.log(product)
+const exsitingcart = JSON.parse(localStorage.getItem("cart")) || []
+const exsitingProductIndex = exsitingcart.findIndex((item)=> item.id === id)
+
+if(exsitingProductIndex !== -1){
+    exsitingcart[exsitingProductIndex].q1 +=prequantity
+}else{
+    exsitingcart.push(product)
+}
+localStorage.setItem("cart", JSON.stringify(exsitingcart))
+setprequantity(1)
+setsize("select size")
+setcolor("select color")
+setcoupon(" ")
    }
   return (
     <div>

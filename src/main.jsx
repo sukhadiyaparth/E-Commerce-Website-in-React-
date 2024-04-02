@@ -27,6 +27,7 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Singlepage from './shop/Singlepage.jsx';
+import CartPage from './shop/CartPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       {path:"/shop",element:<Shop/>},
       
       {path:"/shop/:id",element:<Singlepage/>},
+      {path:"cart-page",element:<CartPage/>}
 
 
     ]
