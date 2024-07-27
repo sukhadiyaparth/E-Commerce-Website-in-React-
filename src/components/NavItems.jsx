@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/logo.png";
+import { AuthContext } from "../context/AuthProvider";
 
 function NavItems() {
   const [menuToggal, setmenuToggal] = useState(false);
   const [socialToggle, setsocialToggle] = useState(false);
   const [headerFixed, setheaderFixed] = useState(false);
-
+  const {user} = useContext(AuthContext)
+  console.log(user);
   window.addEventListener("scroll", () => {
     window.scrollY > 200 ? setheaderFixed(true) : setheaderFixed(false);
   });
@@ -43,7 +45,7 @@ function NavItems() {
                     </ul>
                   </div>
                   <Link to='/singin ' className='lab-btn me-3 d-none d-md-block'>Sing in</Link>
-                  <Link to='/login ' className='d-none d-md-block'>Log in</Link>
+                  <Link to='/login' className='d-none d-md-block'>Log in</Link>
 
                   <div className={`header-bar d-lg-none m-4 ${menuToggal ? "active" : " "}`} onClick={()=>setmenuToggal(!menuToggal)} >
                     <span></span><span></span><span></span>

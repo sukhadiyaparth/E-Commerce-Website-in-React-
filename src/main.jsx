@@ -28,6 +28,10 @@ import {
 import './index.css'
 import Singlepage from './shop/Singlepage.jsx';
 import CartPage from './shop/CartPage.jsx';
+import LoginDemo from './components/LoginDemo.jsx';
+import AuthProvider from './context/AuthProvider.jsx';
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
+import { Login } from './components/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,16 +42,22 @@ const router = createBrowserRouter([
       {path:"/shop",element:<Shop/>},
       
       {path:"/shop/:id",element:<Singlepage/>},
-      {path:"cart-page",element:<CartPage/>}
+      {path:"cart-page",element:<PrivateRoute><CartPage/></PrivateRoute>}
 
 
     ]
   },
+  {
+    path: "/login",
+    element:<Login/>
+  }
 ]);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
